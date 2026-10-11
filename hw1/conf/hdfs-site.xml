@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>3</value>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file://__HADOOP_DATA__/namenode</value>
+    </property>
+    <property>
+        <name>dfs.namenode.checkpoint.dir</name>
+        <value>file://__HADOOP_DATA__/secondary</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file://__HADOOP_DATA__/datanode</value>
+    </property>
+    <property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>__SECONDARY_NAMENODE__:9868</value>
+    </property>
+</configuration>
