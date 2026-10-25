@@ -1,0 +1,14 @@
+[Unit]
+Description=Hive %i
+After=network.target postgresql.service
+
+[Service]
+User=__HADOOP_USER__
+Environment=JAVA_HOME=__JAVA_HOME__ HADOOP_HOME=__HADOOP_HOME__ HIVE_HOME=__HIVE_HOME__
+Environment="HADOOP_CLIENT_OPTS=-Dhive.log.dir=__HIVE_HOME__/logs -Dhive.log.file=%i.log"
+ExecStart=__HIVE_HOME__/bin/hive --service %i
+SuccessExitStatus=143
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
